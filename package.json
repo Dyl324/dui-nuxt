@@ -1,6 +1,6 @@
 {
   "name": "dui-nuxt",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Tailwind components for Nuxt",
   "license": "MIT",
   "type": "module",
@@ -21,18 +21,18 @@
     "minify": "tailwindcss -i ./src/runtime/assets/css/main.css -o ./src/runtime/assets/css/output.css --minify",
     "build-css": "tailwindcss -i src/runtime/assets/css/main.css -o ./dist/output.css --minify",
     "prepack": "nuxt-module-build build && tailwindcss -i src/runtime/assets/css/main.css -o ./dist/output.css --minify",
+    "build": "nuxt-module-build build",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
-    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
+    "release": "npm run lint && npm run test && npm run build && changelogen --release && npm publish && git push --follow-tags",
     "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest watch",
     "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.16.1",
-    "@nuxtjs/tailwindcss": "^6.13.2"
+    "@nuxt/kit": "^3.16.1"
   },
   "devDependencies": {
     "@nuxt/devtools": "^2.3.2",
@@ -49,5 +49,9 @@
     "typescript": "~5.8.2",
     "vitest": "^3.1.1",
     "vue-tsc": "^2.2.8"
+  },
+  "peerDependencies": {
+    "@tailwindcss/vite": "^4.1.1",
+    "tailwindcss": "^4.1.1"
   }
 }
