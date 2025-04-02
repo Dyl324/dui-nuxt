@@ -21,7 +21,7 @@
   "scripts": {
     "start": "npm run minify && npm run dev:prepare && npm run dev",
     "minify": "tailwindcss -i ./src/runtime/assets/css/main.css -o ./src/runtime/assets/css/output.css --minify",
-    "build-css": "tailwindcss -i src/runtime/assets/css/style.css -o ./dist/output.css --minify",
+    "build-css": "tailwindcss -i src/runtime/assets/css/main.css -o ./dist/output.css --minify",
     "prepack": "nuxt-module-build build",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
