@@ -1,9 +1,7 @@
 {
   "name": "dui-nuxt",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tailwind components for Nuxt",
-  "repository": "Dyl324/dui-nuxt",
-  "private": true,
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -22,7 +20,7 @@
     "start": "npm run minify && npm run dev:prepare && npm run dev",
     "minify": "tailwindcss -i ./src/runtime/assets/css/main.css -o ./src/runtime/assets/css/output.css --minify",
     "build-css": "tailwindcss -i src/runtime/assets/css/main.css -o ./dist/output.css --minify",
-    "prepack": "nuxt-module-build build",
+    "prepack": "nuxt-module-build build && tailwindcss -i src/runtime/assets/css/main.css -o ./dist/output.css --minify",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
