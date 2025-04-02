@@ -1,6 +1,6 @@
 {
   "name": "dui-nuxt",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Tailwind components for Nuxt",
   "license": "MIT",
   "type": "module",
